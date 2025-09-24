@@ -15,11 +15,6 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/home')
-@login_required
-def home():
-    return render_template("home.html", boolean = True)
-
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     # Check if details were sent
