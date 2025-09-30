@@ -1,0 +1,36 @@
+<!--
+This file will be the same layout for the dashboard
+but will just focus on editing details for the profile
+-->
+
+<!--
+Created by Jesse Scully
+Date: 28/09/2025
+Influenced by:
+-->
+
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<br>
+<h1 align="center">My Dashboard</h1>
+
+<!-- Code influenced by: https://www.w3schools.com/bootstrap5/bootstrap_cards.php -->
+<!-- Positioning code based on: https://getbootstrap.com/docs/5.3/utilities/position/-->
+<div class="container mt-3 position-relative">
+    <br>
+  <h2>Edit Details</h2>  
+  <br>
+  <div class="card" style="width:400px">
+    <!-- Need to insert an image from the user and upload successfully 
+    Or can give choices to the user and select a several images-->
+    <img class="card-img-top" src="{{url_for('static', filename='Default_Image.jpg')}}" alt="Card image" style="width:100%">
+    <div class="card-body">
+    <!-- Need to be able to edit and save the name and description for user -->
+      <h4 class="card-title">Enter Name</h4>
+      <p class="card-text">Enter Personal Description</p>
+    </div>
+  </div>
+  <br>

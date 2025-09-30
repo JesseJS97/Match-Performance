@@ -1,3 +1,9 @@
+<!--
+Created by Jesse Scully
+Date: 28/09/2025
+Influenced by:
+-->
+
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 
@@ -8,23 +14,69 @@
 <br>
 <h1 align="center">My Dashboard</h1>
 
+<form method="POST">
+    <!-- Button layout influenced by: https://www.w3schools.com/tags/tag_button.asp
+    https://www.w3schools.com/howto/howto_css_round_buttons.asp-->
+    <br />
+    <head>
+    <style>
+    .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #04AA6D;
+    border-radius: 12px;
+    }
+
+    .button1:hover {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 12px;
+    }
+
+    </style>
+    </head>
+</form>
+
 <!-- Code influenced by: https://www.w3schools.com/bootstrap5/bootstrap_cards.php -->
 <!-- Positioning code based on: https://getbootstrap.com/docs/5.3/utilities/position/-->
 <div class="container mt-3 position-relative">
     <br>
   <h2>Profile</h2>
-  <button type="button" class="btn btn-primary btn-md position-absolute top-0 end-0">Default</button>    
+  <button type="button" class="btn btn-primary btn-md position-absolute top-0 end-0">Add Entry</button>    
   <br>
   <div class="card" style="width:400px">
     <!-- Need to insert an image from the user and upload successfully 
     Or can give choices to the user and select a several images-->
-    <img class="card-img-top" src="" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="{{url_for('static', filename='Default_Image.jpg')}}" alt="Card image" style="width:100%">
     <div class="card-body">
     <!-- Need to be able to edit and save the name and description for user -->
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">"Field should be editable and can be saved successfully"</p>
+      <h4 class="card-title">Enter Name</h4>
+      <p class="card-text">Enter Personal Description</p>
+      <button type="button" class="button button1">Edit</button>   
     </div>
   </div>
-  <br>
+
+
+<!-- 
+1. Add a default picture for users and then give option to upload a picture
+2. Make a button to enter an entry for the day for day performance for badminton games
+3. Can make a separate button for coaching entries
+4. Badminton coaching session entries should include the following:
+- Approximate Coaching Time
+- Things I worked on: footwork, smashing, defence, front court (Make these buttons)
+- Homework/At home practice (make this comments)
+ -->
 
 {% endblock %}

@@ -6,7 +6,7 @@ Link: https://www.youtube.com/watch?v=dam0GPOAvVI
 """
 
 # Execute/Run the web server
-from Website import create_app
+from website import create_app
 
 app = create_app()
 
