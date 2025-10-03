@@ -35,7 +35,14 @@ def delete_note():
 
     return jsonify({})
 
+# Designate a route to go to the dashboard page
 @views.route('/dashboard')
 @login_required
 def dashboard():
     return render_template("dashboard.html")
+
+# Designate a route to go to the dashboard edit page
+@views.route('/dashboard_edit')
+@login_required
+def dashboard_edit():
+    return render_template('dashboard_edit.html')
