@@ -4,6 +4,11 @@ Input, track and visualise your badminton performance over time
 Intial flask project influenced by Tech with Tim - Python Website Full Tutorial:
 (User Authentication, Database setup and templating with Jinja)
 
+# Libraries needed to be installed in the terminal
+1. pip install flask
+2. pip install flask_sqlalchemy
+3. pip install flask_login
+   
 # Development Goals
 1. Input match statistics for badminton specific scores
 2. Store statistics for users to be used over time
