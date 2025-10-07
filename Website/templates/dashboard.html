@@ -14,67 +14,82 @@ Influenced by:
 <br>
 <h1 align="center">My Dashboard</h1>
 
-<form method="POST">
-    <!-- Button layout influenced by: https://www.w3schools.com/tags/tag_button.asp
-    https://www.w3schools.com/howto/howto_css_round_buttons.asp-->
-    <br />
-    <head>
-    <style>
-    .button {
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    }
 
-    .button1 {
-    background-color: white;
-    color: black;
-    border: 2px solid #045faa;
-    border-radius: 16px;
-    }
-
-    .button1:hover {
-    background-color: #045faa;
-    color: white;
-    border-radius: 16px;
-    }
-
-    </style>
-    </head>
-</form>
 
 <!-- Code influenced by: https://www.w3schools.com/bootstrap5/bootstrap_cards.php -->
 <!-- Positioning code based on: https://getbootstrap.com/docs/5.3/utilities/position/-->
 <div class="container mt-3 position-relative">
   <h2>Profile</h2>
   <br>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Profile Fields</h4>
+        </div>
+        <div class="modal-body">
+          <label>Name: </label>
+      <input id="myText" class="mb-4"> 
+      
+      <div class="form-group mb-4">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="3" id="description"></textarea>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 <div class="position-absolute
             top-0
             start-50">
   <h2> Performance </h2>  
   <p> Place graphs here </p>
-</div>   
+</div>
+
+
+
   <br>
-  <div class="card text-bg-success" style="width:400px">
+  <div class="card text-bg-success" style="width:320px">
     <!-- Need to insert an image from the user and upload successfully 
     Or can give choices to the user and select a several images-->
     <img class="card-img-top" src="{{url_for('static', filename='Default_Image.jpg')}}" alt="Card image" style="width:100%">
+    
     <div class="card-body">
+    
+    <form method="POST"">
     <!-- Need to be able to edit and save the name and description for user -->
-      <h4 class="card-title">Name</h4>
-      <p class="card-text">Personal Description</p>
-      <button type="button" class="button button1">Edit</button>
-      <button type="button" class="button button1">Add Performance Entry</button>
-      <button type="button" class="button button1">Add Coaching Entry</button>       
+      <label>Name: </label>
+      <input id="myText" class="mb-6"> 
+      
+      <div class="form-group mb-6">
+        <label for="description">Description:</label>
+      </div>
+      
+
+      <button type="button" class="btn btn-primary">Add Performance Entry</button>
+      <button type="button" class="btn btn-primary">Add Coaching Entry</button>
+
+      <script src="dashboard.js"></script>
+    </form>       
     </div>
   </div>
 
+  
+  
+  
+</div>
 
 
 <!-- 

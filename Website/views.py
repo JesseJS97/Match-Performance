@@ -36,13 +36,16 @@ def delete_note():
     return jsonify({})
 
 # Designate a route to go to the dashboard page
-@views.route('/dashboard')
+@views.route('/dashboard',methods=["GET","POST"])
 @login_required
 def dashboard():
+    if request.method == 'POST':
+        return redirect(url_for('dashboard_edit.html'))
     return render_template("dashboard.html")
 
 # Designate a route to go to the dashboard edit page
-@views.route('/dashboard_edit')
+@views.route('/dashboard_edit',methods=["GET","POST"])
 @login_required
 def dashboard_edit():
-    return render_template('dashboard_edit.html')
+    if request.method == 'POST':
+        return redirect(url_for('dashboard_edit.html'))
