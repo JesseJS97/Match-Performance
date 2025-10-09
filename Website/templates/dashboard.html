@@ -22,7 +22,8 @@ Influenced by:
   <h2>Profile</h2>
   <br>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!-- Code influenced by: https://getbootstrap.com/docs/4.0/components/modal/ -->
+<button type="button" class="btn btn-info btn-lg mb-2" data-toggle="modal" data-target="#myModal">Edit</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -32,14 +33,14 @@ Influenced by:
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Profile Fields</h4>
+          <h4 class="modal-title">Edit Profile</h4>
         </div>
         <div class="modal-body">
           <label>Name: </label>
       <input id="myText" class="mb-4"> 
       
       <div class="form-group mb-4">
-        <label for="description">Description:</label>
+        <label for="description">Player Description:</label>
         <textarea class="form-control" rows="3" id="description"></textarea>
       </div>
         </div>
@@ -68,21 +69,21 @@ Influenced by:
     
     <div class="card-body">
     
-    <form method="POST"">
-    <!-- Need to be able to edit and save the name and description for user -->
-      <label>Name: </label>
-      <input id="myText" class="mb-6"> 
+    <label>Name: </label>
+    <br>
       
-      <div class="form-group mb-6">
-        <label for="description">Description:</label>
-      </div>
-      
+    <div>
+      <label for="description"> Player Description:</label>
+    </div>
 
-      <button type="button" class="btn btn-primary">Add Performance Entry</button>
+    <a href="{{ url_for('views.pe_route') }}">
+      <button type="button" class="btn btn-primary mb-2">Add Performance Entry</button>
+    </a>
+    
+    <a href="{{ url_for('views.ce_route') }}">
       <button type="button" class="btn btn-primary">Add Coaching Entry</button>
-
-      <script src="dashboard.js"></script>
-    </form>       
+    </a>
+        
     </div>
   </div>
 

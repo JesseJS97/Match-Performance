@@ -43,9 +43,14 @@ def dashboard():
         return redirect(url_for('dashboard_edit.html'))
     return render_template("dashboard.html")
 
-# Designate a route to go to the dashboard edit page
-@views.route('/dashboard_edit',methods=["GET","POST"])
+# Designate a route to go to the performance entry edit page
+@views.route('/performance_entry')
 @login_required
-def dashboard_edit():
-    if request.method == 'POST':
-        return redirect(url_for('dashboard_edit.html'))
+def pe_route():
+    return render_template('performance_entry.html')
+
+# Designate a route to go to the coaching entry edit page
+@views.route('/coaching_entry')
+@login_required
+def ce_route():
+    return render_template('coaching_entry.html')
