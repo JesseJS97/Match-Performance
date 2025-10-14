@@ -16,4 +16,20 @@ Influenced by:
 <br>
 <h1 align="center">Coaching Entry</h1>
 
+<!-- Add a calendar -->
+<!-- Code taken from this tutorial: https://www.youtube.com/watch?v=XgUYftRJHPY -->
+<label for="datepicker"> Select Date: </label>
+<input type="date" id="datepicker" name="datepicker">
+<br><br>
+
+<form>
+    <label for="coaching">Appromixate Coaching Time: </label>
+    <input type="number" class="form-control" id="coaching" name="coaching" value=""><br>
+        
+    <label for="worked">Things I worked on:</label>
+    <input type="text" class="form-control mb-4" id="worked" name="worked" value="">
+
+    <label for="practice">At home practice drills:</label>
+    <input type="text" class="form-control mb-4" id="practice" name="practice" value="">
+</form>
 {% endblock %}
