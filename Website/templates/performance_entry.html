@@ -29,11 +29,42 @@ Influenced by:
 <input type="date" id="datepicker" name="datepicker">
 <br><br>
 
+<!-- This form will submit all data to database to be displayed on the graphs dashboard -->
 <form>
     <label for="wins">Total Wins for the Day: </label>
     <input type="number" class="form-control" id="wins" name="wins" value=""><br>
         
-    <label for="losses"> Total Losses for the Day:</label>
+    <label for="losses"> Total Losses for the Day:</label><br>
     <input type="number" class="form-control mb-4" id="losses" name="losses" value="">
+
+    <label>Areas i was good in: </label>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Select an Option </option>
+        <option value="footwork">Footwork</option>
+        <option value="defense">Defense</option>
+        <option value="offense">Offense</option>
+        <option value="teamwork">Teamwork Coordination</option>
+        <option value="fitness">Fitness</option>
+    </select> <br>
+
+    <label>Areas i was poor in: </label>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Select an Option </option>
+        <option value="footwork">Footwork</option>
+        <option value="defense">Defense</option>
+        <option value="offense">Offense</option>
+        <option value="teamwork">Teamwork Coordination</option>
+        <option value="fitness">Fitness</option>
+    </select> <br>
+
+    <label>Overall Feeling: </label>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Select an Option </option>
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+    </select> <br>
+
+    <button type="button" class="btn btn-primary">Submit</button>
+
 </form>
 {% endblock %}
