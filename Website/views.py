@@ -54,3 +54,15 @@ def pe_route():
 @login_required
 def ce_route():
     return render_template('coaching_entry.html')
+
+# Designate a route to go from performance entry back to dashboard
+@views.route('/p_dashboard', methods=["GET","POST"])
+@login_required
+def performance_to_dashboard():
+    return redirect(url_for('views.dashboard'))
+
+# Designate a route to go from coaching entry back to dashboard
+@views.route('/c_dashboard', methods=["GET","POST"])
+@login_required
+def coaching_to_dashboard():
+    return redirect(url_for('views.dashboard'))
