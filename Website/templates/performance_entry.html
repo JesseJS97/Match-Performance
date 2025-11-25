@@ -21,7 +21,7 @@ Influenced by:
 {% block content %}
 
 <br>
-<h1 align="center">Performance Entry</h1>
+<h1 align="left">Performance Entry</h1>
 
 <!-- Add a calendar -->
 <!-- Code taken from this tutorial: https://www.youtube.com/watch?v=XgUYftRJHPY -->
@@ -79,7 +79,9 @@ Influenced by:
       </div>
     </fieldset> <br>
 
+    <a href="{{ url_for('views.to_dashboard') }}">
     <button type="button" class="btn btn-primary">Submit</button>
+    </a>
 
 </form>
 {% endblock %}

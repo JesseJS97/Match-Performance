@@ -14,7 +14,7 @@ Influenced by:
 {% block content %}
 
 <br>
-<h1 align="center">Coaching Entry</h1>
+<h1 align="left">Coaching Entry</h1>
 
 <!-- Add a calendar -->
 <!-- Code taken from this tutorial: https://www.youtube.com/watch?v=XgUYftRJHPY -->
@@ -34,6 +34,8 @@ Influenced by:
     <textarea class="form-control" rows="3" id="description"></textarea><br>
     <!--<input type="text" class="form-control mb-4" id="practice" name="practice" value="">-->
 
+    <a href="{{ url_for('views.to_dashboard') }}">
     <button type="button" class="btn btn-primary">Submit</button>
+    </a>
 </form>
 {% endblock %}

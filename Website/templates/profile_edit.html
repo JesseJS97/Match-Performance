@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Profile Edit{% endblock %}
+
+{% block content %}
+ 
+<br>
+<h1 align="left">Profile Edit</h1>
+
+<form>
+    <label for="name">Name: </label>
+    <textarea class="form-control" rows="1" id="description"></textarea><br>
+        
+    <label for="description">Player Description:</label>
+    <textarea class="form-control" rows="1" id="description"></textarea><br>
+    <!--<input type="text" class="form-control mb-4" id="worked" name="worked" value="">-->
+
+    <a href="{{ url_for('views.to_dashboard') }}">
+    <button type="button" class="btn btn-primary">Submit</button>
+    </a>
+</form>
+
+{% endblock %}

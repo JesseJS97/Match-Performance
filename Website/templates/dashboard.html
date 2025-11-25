@@ -19,36 +19,14 @@ Influenced by:
 <div class="container mt-3 position-relative">
   <h2>Profile</h2>
   <br>
+<form>
 
-<!-- Code influenced by: https://getbootstrap.com/docs/4.0/components/modal/ -->
-<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Edit</button>
+<a href="{{ url_for('views.render_profile_edit') }}">
+<button type="button" class="btn btn-primary mb-2">Edit</button>
+</a>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Profile</h4>
-        </div>
-        <div class="modal-body">
-          <label>Name: </label>
-      <input id="myText" class="mb-4"> 
-      
-      <div class="form-group mb-4">
-        <label for="description">Player Description:</label>
-        <textarea class="form-control" rows="3" id="description"></textarea>
-      </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+
+
 
 <div class="position-absolute
             top-0
@@ -58,7 +36,7 @@ Influenced by:
 </div>
 
   <br>
-  <div class="card text-bg-success" style="width:320px">
+  <div class="card text-white bg-secondary mb-3" style="width:320px">
     <!-- Need to insert an image from the user and upload successfully 
     Or can give choices to the user and select a several images-->
     <img class="card-img-top" src="{{url_for('static', filename='Default_Image.jpg')}}" alt="Card image" style="width:100%">
