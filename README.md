@@ -1,5 +1,5 @@
-# Badminton-Performance-Tracker (Basic Full Stack Website)
-Still in Development
+# Badminton-Performance-Tracker (Basic Full Stack Website) (In development)
+
 Input, track and visualise your badminton performance over time
 
 Intial flask project influenced by Tech with Tim - Python Website Full Tutorial:
