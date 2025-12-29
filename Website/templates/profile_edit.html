@@ -6,17 +6,17 @@
 <br>
 <h1 align="left">Profile Edit</h1>
 
-<form>
+<!-- Code influenced by: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application?-->
+<form method="POST" action="{{ url_for('views.edit_details')}}">
     <label for="name">Name: </label>
-    <textarea class="form-control" rows="1" id="description"></textarea><br>
+    <input type="text" name="player_name" class="form-control" 
+            value="{{ name }}"></input> <br>
         
     <label for="description">Player Description:</label>
-    <textarea class="form-control" rows="1" id="description"></textarea><br>
-    <!--<input type="text" class="form-control mb-4" id="worked" name="worked" value="">-->
+    <input type="text" name="player_description" class="form-control" 
+            value="{{ description }}"></input> <br>
 
-    <a href="{{ url_for('views.to_dashboard') }}">
-    <button type="button" class="btn btn-primary">Submit</button>
-    </a>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 {% endblock %}

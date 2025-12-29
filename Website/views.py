@@ -5,9 +5,9 @@ Influenced by: Python Website Full Tutorial by Tech With Tim
 Link: https://www.youtube.com/watch?v=dam0GPOAvVI
 """
 
-from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for, request
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Note, User_details
 from . import db
 import json
 
@@ -21,27 +21,13 @@ def home():
         return redirect(url_for('views.dashboard'))
     return render_template("home.html", boolean = True)
 
-@views.route('/delete-note', methods=['POST'])
-# Define a function to delete a note
-def delete_note():
-    note = json.loads(request.data)
-    noteId = note['noteId']
-    note = Note.query.get(noteId)
-    # Ensure signed in user owns note can only delete the note
-    if note:
-        if note.user_id == current_user.id:
-            db.session.delete(note)
-            db.session.commit()
-
-    return jsonify({})
-
-# Designate a route to go to the dashboard page
-@views.route('/dashboard',methods=["GET","POST"])
+# Establish the dashboard
+@views.route('/dashboard')
 @login_required
 def dashboard():
-    if request.method == 'POST':
-        return redirect(url_for('dashboard_edit.html'))
-    return render_template("dashboard.html")
+    # Get details from profile edit page
+    player = User_details.query.first()
+    return render_template('dashboard.html', player=player)
 
 # Designate a route to go to the performance entry edit page
 @views.route('/performance_entry')
@@ -62,7 +48,30 @@ def to_dashboard():
     return redirect(url_for('views.dashboard'))
 
 # Designate a route to go to the profile edit page
-@views.route('/profile_edit', methods=["GET","POST"])
+# Retrieve data
+@views.route('/profile_edit')
 @login_required
 def render_profile_edit():
     return render_template('profile_edit.html')
+
+# Code influenced by: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application?
+# Submit profile details, save data and redirect to the dashboard
+@views.route('/dashboard/edit', methods=['POST'])
+def edit_details():
+    if request.method == 'POST':
+        player_name = request.form.get('player_name')
+        player_description = request.form.get('player_description')
+
+        player = User_details.query.first()
+
+        # Insert a brand new entry for player
+        if player is None:
+            player = User_details(name=player_name, description=player_description)
+            db.session.add(player)
+        # If not empty, replace it with the new entry
+        else:
+            player.name = player_name
+            player.description = player_description
+
+        db.session.commit()
+        return redirect(url_for('views.dashboard'))
