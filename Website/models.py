@@ -29,9 +29,21 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     notes = db.relationship('Note')
 
+# Setup User Details model to conform to the below format
 class User_details(db.Model):
     # Define a schema for objects that need to be stored in db
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     description = db.Column(db.String(500))
+
+# Setup performance entries model to conform to the below format
+class performance_entries(db.Model):
+    # Define a schema for objects that need to be stored in db
+    id = db.Column(db.Integer, primary_key=True)
+    time = db.Column(db.DATETIME)
+    wins = db.Column(db.Integer)
+    losses = db.Column(db.Integer)
+    intensity = db.Column(db.Integer)
+
+
     

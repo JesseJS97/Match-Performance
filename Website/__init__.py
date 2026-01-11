@@ -29,7 +29,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
 
     # Import models BEFORE we initialise the database
-    from .models import Note, User
+    from .models import User
 
     create_database(app)
 

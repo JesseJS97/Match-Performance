@@ -25,17 +25,43 @@ Influenced by:
 <button type="button" class="btn btn-primary mb-2">Edit</button>
 </a>
 
-
-
-
 <div class="position-absolute
             top-0
             start-50">
-  <h2> Performance </h2>  
-  <p> Place graphs here </p>
+  <h1> Performance </h1>
+  <h2> Win Rate for 2025 </h2>
+  <body>
+  <canvas id="lineChart" width="900" height="400"></canvas>
+  
+  
+  <script>
+    // Display win percentage rate from performance entries
+    // Code influenced by: https://www.gitauharrison.com/articles/data-visualization-with-flask-and-chartjs
+    const ctx = document.getElementById('lineChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb','Mar','Apr', 'May','Jun','July', 'Aug','Sep','Oct', 'Nov','Dec'],
+            // Dataset will be win rates per month
+            datasets: [{
+                label: 'Win Rate per Month',
+                data: [12, 19, 3, 5, 2, 3],
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+        },
+        
+    });
+  </script>
+
+</body>
 </div>
 
-  <br>
   <div class="card text-white bg-secondary mb-3" style="width:320px">
     <!-- Need to insert an image from the user and upload successfully 
     Or can give choices to the user and select a several images-->
@@ -46,21 +72,21 @@ Influenced by:
     <label> Name </label>
     <input type="text" class="form-control" name="name" value="{{ player.name }}" readonly><br>
         
-    <label> Description </label>
+    <label> Player Description </label>
     <input type="text" class="form-control mb-4" name="description" value="{{ player.description }}" readonly>
 
     <a href="{{ url_for('views.pe_route') }}">
       <button type="button" class="btn btn-primary mb-2">Add Performance Entry</button>
     </a>
     
-    <a href="{{ url_for('views.ce_route') }}">
-      <button type="button" class="btn btn-primary">Add Coaching Entry</button>
-    </a>
-        
     </div>
   </div>
 
 </div>
+
+
+
+
 
 
 <!-- 
